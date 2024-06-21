@@ -458,7 +458,7 @@ def kaiming_uniform_(
     print("using nonlinearity: {}".format(nonlinearity))
     print("fan: {}".format(fan))
     print("gain: {}".format(gain))
-    print("std: {}".format(fan))
+    print("std: {}".format(std))
     bound = math.sqrt(3.0) * std  # Calculate uniform bounds from standard deviation
     print("bound: {}".format(bound))
     with torch.no_grad():
