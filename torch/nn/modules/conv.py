@@ -143,6 +143,7 @@ class _ConvNd(Module):
         # uniform(-1/sqrt(k), 1/sqrt(k)), where k = weight.size(1) * prod(*kernel_size)
         # For more details see: https://github.com/pytorch/pytorch/issues/15314#issuecomment-477448573
         init.kaiming_uniform_(self.weight, a=math.sqrt(5))
+        print("Cnn layer using kaiming_unform")   
         if self.bias is not None:
             fan_in, _ = init._calculate_fan_in_and_fan_out(self.weight)
             if fan_in != 0:
