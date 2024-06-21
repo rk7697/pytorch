@@ -455,7 +455,12 @@ def kaiming_uniform_(
     fan = _calculate_correct_fan(tensor, mode)
     gain = calculate_gain(nonlinearity, a)
     std = gain / math.sqrt(fan)
+    print("using nonlinearity: {}".format(nonlinearity))
+    print("fan: {}".format(fan))
+    print("gain: {}".format(gain))
+    print("std: {}".format(fan))
     bound = math.sqrt(3.0) * std  # Calculate uniform bounds from standard deviation
+    print("bound: {}".format(bound))
     with torch.no_grad():
         return tensor.uniform_(-bound, bound, generator=generator)
 
